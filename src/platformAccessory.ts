@@ -95,7 +95,7 @@ export class UniFiAP {
 	async getOn(): Promise<CharacteristicValue> {
 		const apStatus = await this.getApStatus()
 		this.states.isOn = apStatus.isOn
-		this.platform.log.debug(`Get Characteristic On -> ${apStatus.isOn} (${this.accessory.context.device.name})`)
+		this.platform.log.debug(`Get Characteristic On -> ${apStatus.isOn} (${this.accessPoint.name})`)
 		return apStatus.isOn
 	}
 
@@ -103,7 +103,7 @@ export class UniFiAP {
 		const apStatus = await this.getApStatus()
 		const hue = apStatus.hue
 		this.states.Hue = hue
-		this.platform.log.debug(`Get Characteristic Hue -> ${hue} (${this.accessory.context.device.name})`)
+		this.platform.log.debug(`Get Characteristic Hue -> ${hue} (${this.accessPoint.name})`)
 		return hue
 	}
 
@@ -111,14 +111,14 @@ export class UniFiAP {
 		const apStatus = await this.getApStatus()
 		const saturation = apStatus.saturation
 		this.states.Saturation = saturation
-		this.platform.log.debug(`Get Characteristic Saturation -> ${saturation} (${this.accessory.context.device.name})`)
+		this.platform.log.debug(`Get Characteristic Saturation -> ${saturation} (${this.accessPoint.name})`)
 		return saturation
 	}
 
 	async getBrightness(): Promise<CharacteristicValue> {
 		const apStatus = await this.getApStatus()
 		this.states.Brightness = apStatus.Brightness
-		this.platform.log.debug(`Get Characteristic Brightness -> ${apStatus.Brightness} (${this.accessory.context.device.name})`)
+		this.platform.log.debug(`Get Characteristic Brightness -> ${apStatus.Brightness} (${this.accessPoint.name})`)
 		return apStatus.Brightness
 	}
 
@@ -127,25 +127,25 @@ export class UniFiAP {
 	async setOn(value: CharacteristicValue) {
 		this.states.isOn = value as boolean
 		await this.updateAp()
-		this.platform.log.debug(`Set Characteristic On -> ${value} (${this.accessory.context.device.name})`)
+		this.platform.log.debug(`Set Characteristic On -> ${value} (${this.accessPoint.name})`)
 	}
 
 	async setHue(value: CharacteristicValue) {
 		this.states.Hue = value as number
 		await this.updateAp()
-		this.platform.log.debug(`Set Characteristic Hue -> ${value} (${this.accessory.context.device.name})`)
+		this.platform.log.debug(`Set Characteristic Hue -> ${value} (${this.accessPoint.name})`)
 	}
 
 	async setSaturation(value: CharacteristicValue) {
 		this.states.Saturation = value as number
 		await this.updateAp()
-		this.platform.log.debug(`Set Characteristic Saturation -> ${value} (${this.accessory.context.device.name})`)
+		this.platform.log.debug(`Set Characteristic Saturation -> ${value} (${this.accessPoint.name})`)
 	}
 
 	async setBrightness(value: CharacteristicValue) {
 		this.states.Brightness = value as number
 		await this.updateAp()
-		this.platform.log.debug(`Set Characteristic Brightness -> ${value} (${this.accessory.context.device.name})`)
+		this.platform.log.debug(`Set Characteristic Brightness -> ${value} (${this.accessPoint.name})`)
 	}
 
 	async updateAp() {
@@ -265,15 +265,15 @@ export class UniFiAP {
 					apStatus.G = rgb[1]
 					apStatus.B = rgb[2]
 
-					this.platform.log.debug(`Retrieved LED color for ${this.accessPoint.name}: ${accessPoint.led_override_color_brightness}`)
+					this.platform.log.debug(`Retrieved LED brightness for ${this.accessPoint.name}: ${accessPoint.led_override_color_brightness}`)
 					apStatus.Brightness = toInt(accessPoint.led_override_color_brightness)
 				}
 			} else {
-				this.platform.log.error(`Failed to retrieve LED state for ${this.accessPoint.name}: Access point not found`)
+				this.platform.log.error(`Failed to retrieve LED information for ${this.accessPoint.name}: Access point not found`)
 			}
 		} catch (error) {
 			// Handle network or API errors gracefully
-			this.platform.log.error(`Failed to retrieve LED state for ${this.accessPoint.name}: ${error}`)
+			this.platform.log.error(`Failed to retrieve LED information for ${this.accessPoint.name}: ${error}`)
 		}
 
 		return apStatus
