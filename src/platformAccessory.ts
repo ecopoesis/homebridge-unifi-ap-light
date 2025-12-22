@@ -250,18 +250,22 @@ export class UniFiAP {
 					}
 				} else {
 					// Standard APs use the flat `led_override` field
+					this.platform.log.debug(`Retrieved LED state for ${this.accessPoint.name}: ${accessPoint.led_override}`)
+
 					const isOn = accessPoint.led_override === 'on'
-					this.platform.log.debug(`Retrieved LED state for ${this.accessPoint.name}: ${isOn ? 'on' : 'off'}`)
 					apStatus.isOn = isOn
 				}
 
 				// handle color information
 				if (isRgb(accessPoint)) {
+					this.platform.log.debug(`Retrieved LED color for ${this.accessPoint.name}: ${accessPoint.led_override_color}`)
+
 					const rgb = hexToRgb(accessPoint.led_override_color)
 					apStatus.R = rgb[0]
 					apStatus.G = rgb[1]
 					apStatus.B = rgb[2]
 
+					this.platform.log.debug(`Retrieved LED color for ${this.accessPoint.name}: ${accessPoint.led_override_color_brightness}`)
 					apStatus.Brightness = toInt(accessPoint.led_override_color_brightness)
 				}
 			} else {
