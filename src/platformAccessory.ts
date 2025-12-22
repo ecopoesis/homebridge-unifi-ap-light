@@ -184,7 +184,7 @@ export class UniFiAP {
 				})
 				if (response.status === 200) {
 					this.platform.log.debug(`Successfully set LED state for ${this.accessPoint.name} to ${data.led_override}.`)
-					if (isUdm(this.accessPoint)) {
+					if (isRgb(this.accessPoint)) {
 						this.platform.log.debug(`Successfully set LED color for ${this.accessPoint.name} to ${data.led_override_color}.`)
 						this.platform.log.debug(`Successfully set LED brightness for ${this.accessPoint.name} to ${data.led_override_brightness}.`)
 					}
