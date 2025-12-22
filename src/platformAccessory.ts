@@ -165,7 +165,7 @@ export class UniFiAP {
 				: {
 					led_override: newState.isOn ? 'on' : 'off',
 					led_override_color: newState.hex,
-					led_override_brightness: newState.Brightness
+					led_override_color_brightness: newState.Brightness
 				}
 
 		// Define API endpoints to try in sequence (some UniFi setups use different URL structures)
@@ -186,7 +186,7 @@ export class UniFiAP {
 					this.platform.log.debug(`Successfully set LED state for ${this.accessPoint.name} to ${data.led_override}.`)
 					if (isRgb(this.accessPoint)) {
 						this.platform.log.debug(`Successfully set LED color for ${this.accessPoint.name} to ${data.led_override_color}.`)
-						this.platform.log.debug(`Successfully set LED brightness for ${this.accessPoint.name} to ${data.led_override_brightness}.`)
+						this.platform.log.debug(`Successfully set LED brightness for ${this.accessPoint.name} to ${data.led_override_color_brightness}.`)
 					}
 					return
 				} else {
