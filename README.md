@@ -1,5 +1,5 @@
 # homebridge-unifi-ap-light
-Control the light rings on your UniFi Access Point(s) with HomeKit!
+Control the lights on your UniFi Access Point(s) with HomeKit.
 
 ## Features
 - **Multi-Site Support:** Supports multiple UniFi sites (tenants) in a single Homebridge config.
@@ -8,19 +8,10 @@ Control the light rings on your UniFi Access Point(s) with HomeKit!
 - **Advanced Filtering:** Include or exclude specific APs by ID.
 - **Compatiblity:** Supports self-hosted and Ubiquiti-hosted (e.g. UDM) UniFi API structures.
 - **Session Management:** Robust handling of cookie- and token-based API authentication.
+- **RGB support:** Auto-detects and supports APs with RGB lights.
 
 ## Installation
-Search for `homebridge-unifi-ap-light` in the Homebridge UI, or run:
-
-```sh
-npm install -g homebridge-unifi-ap-light
-```
-
-Or, with Yarn:
-
-```sh
-yarn global add homebridge-unifi-ap-light
-```
+Search for `@ecopoesis/homebridge-unifi-ap-rgb` in the Homebridge UI.
 
 ## Usage
 
@@ -30,7 +21,7 @@ yarn global add homebridge-unifi-ap-light
 
 ```json
 {
-  "name": "UniFi AP Lights",
+  "name": "UniFi Access Point RGB",
   "platform": "UnifiAPLight",
   "host": "<hostname>:<port>",
   "username": "<username>",
@@ -71,7 +62,7 @@ yarn global add homebridge-unifi-ap-light
 - Run Homebridge in debug mode (`homebridge -D`) to view detailed logs.
 - On startup, the plugin will list all detected sites:
   ```
-  [UniFi AP Lights] Available sites loaded: Default, default, mySite, p2yvd0iv
+  [UniFi Access Point RGB] Available sites loaded: Default, default, mySite, p2yvd0iv
   ```
 - If a site is not recognized, you'll see:
   ```
@@ -79,4 +70,4 @@ yarn global add homebridge-unifi-ap-light
   ```
 
 ## License
-This project is licensed under the MIT License — see the LICENSE file for details.
+This project is licensed under the Apache 2.0 License — see the LICENSE file for details.
