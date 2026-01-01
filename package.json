@@ -1,18 +1,18 @@
 {
-  "displayName": "UniFi Access Point Light",
-  "name": "homebridge-unifi-ap-light",
-  "version": "1.4.5",
-  "description": "Control the blue LED ring on your UniFi APs!",
+  "displayName": "UniFi Access Point RGB",
+  "name": "@ecopoesis/homebridge-unifi-ap-rgb",
+  "version": "2.0.0-beta",
+  "description": "Control the RGB LEDs on your UniFi APs",
   "license": "Apache-2.0",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pizzalorddex/homebridge-unifi-ap-light.git"
+    "url": "git+https://github.com/ecopoesis/homebridge-unifi-ap-light.git"
   },
   "bugs": {
-    "url": "https://github.com/pizzalorddex/homebridge-unifi-ap-light/issues"
+    "url": "https://github.com/ecopoesis/homebridge-unifi-ap-light/issues"
   },
-  "homepage": "https://github.com/pizzalorddex/homebridge-unifi-ap-light#readme",
+  "homepage": "https://github.com/ecopoesis/homebridge-unifi-ap-light#readme",
   "engines": {
     "node": ">=18.15.0",
     "homebridge": ">=1.5.0"
@@ -48,5 +48,7 @@
     "rimraf": "^3.0.2",
     "ts-node": "^10.3.0",
     "typescript": "^5.0.0"
-  }
+  },
+  "types": "./dist/index.d.ts",
+  "author": "Mike Roberts"
 }
