@@ -1,4 +1,4 @@
-# homebridge-unifi-ap-light
+# homebridge-unifi-ap-rgb
 Control the lights on your UniFi Access Point(s) with HomeKit.
 
 ## Features
@@ -6,7 +6,7 @@ Control the lights on your UniFi Access Point(s) with HomeKit.
 - **Dynamic Discovery:** Automatically discovers UniFi APs across one or more specified sites.
 - **Real-time Updates:** Changes made in HomeKit instantly reflect on your access points.
 - **Advanced Filtering:** Include or exclude specific APs by ID.
-- **Compatiblity:** Supports self-hosted and Ubiquiti-hosted (e.g. UDM) UniFi API structures.
+- **Compatibility:** Supports self-hosted and Ubiquiti-hosted (e.g. UDM) UniFi API structures.
 - **Session Management:** Robust handling of cookie- and token-based API authentication.
 - **RGB support:** Auto-detects and supports APs with RGB lights.
 

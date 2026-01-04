@@ -1,18 +1,18 @@
 {
   "displayName": "UniFi Access Point RGB",
   "name": "@ecopoesis/homebridge-unifi-ap-rgb",
-  "version": "2.0.0-beta2",
+  "version": "2.0.0",
   "description": "Control the RGB LEDs on your UniFi APs",
   "license": "Apache-2.0",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ecopoesis/homebridge-unifi-ap-light.git"
+    "url": "git+https://github.com/ecopoesis/homebridge-unifi-ap-rgb.git"
   },
   "bugs": {
-    "url": "https://github.com/ecopoesis/homebridge-unifi-ap-light/issues"
+    "url": "https://github.com/ecopoesis/homebridge-unifi-ap-rgb/issues"
   },
-  "homepage": "https://github.com/ecopoesis/homebridge-unifi-ap-light#readme",
+  "homepage": "https://github.com/ecopoesis/homebridge-unifi-ap-rgb#readme",
   "engines": {
     "node": ">=18.15.0",
     "homebridge": ">=1.5.0"

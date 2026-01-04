@@ -68,11 +68,6 @@ export class UniFiAP {
 
 		// if this AP can be different colors, register the color characteristics
 		if (isRgb(this.accessPoint)) {
-			// register handlers for the On/Off Characteristic
-			this.service.getCharacteristic(this.platform.Characteristic.On)
-				.onSet(this.setOn.bind(this))
-				.onGet(this.getOn.bind(this))
-
 			// register handlers for the Hue Characteristic
 			this.service.getCharacteristic(this.platform.Characteristic.Hue)
 				.onSet(this.setHue.bind(this))
