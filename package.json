@@ -30,7 +30,8 @@
     "unifi",
     "led",
     "udm",
-    "wap"
+    "wap",
+    "rgb"
   ],
   "dependencies": {
     "@types/cookie": "^0.5.1",
